@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <h1>Stephen King</h1>
+    <br>
+    <h2 class="text-sm-center">Du livre à l'écran</h2>
+    <br>
+    {# Affichage de la première image #}
+
+    <div class="bigImage">
+        <figure>
+            <img class="img-responsive"src="https://static.hitek.fr/img/actualite/ill_m/287415807/theoutsiderbanner.jpg" alt="The Outsider - Le livre">
+        </figure>
+    </div>
+
+    {# Affichage des 3 images en dessous #}
+
+    {% for row in images | batch(3) %}
+        <div class="row mb-5">
+            {% for image in row %}
+                <div class="col-md-4">
+                    <livre>
+                        <div class="mw-100 overflow-hidden">
+                            <div class="zoom">
+                                <img src="{{ image.url }}" class="img-fluid w-100 rounded pb-1" />
+                            </div>
+                        </div>
+                    </livre>
+                </div>
+            
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ADAPTATIONS{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>ADAPTATIONS</h1>
+    <br>
+    {% for row in adaptations | batch(3) %}
+        <div class="row mb-5">
+            {% for adaptation in row %}
+                <div class="col-md-4">
+                    <livre>
+                        <div class="mw-100 rounded-top overflow-hidden">
+                            <div class="zoom">
+                                <img src="{{ adaptation.image }}" class="img-responsive w-100 rounded" />
+                            </div>
+                        <div class="metadata">{{ adaptation.titre }}, {{ adaptation.anneeSortie }}, {{ adaptation.type }}</div>
+                        <a href="{{ path('adapt_show', {'id': adaptation.id}) }}" class="btn btn-primary mb-3">+ de détails</a>
+                        </div>
+                    </livre>
+                </div>
+            
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+.home {
+    align-items: left;
+}
+body {
+    background-color: lightgray;
+}
+
+.zoom:hover img{
+        
+    transform: scale(1.05);
+}
+.metadata{
+    font-size: larger;
+    margin-top: 25px;
+}
+.bigImage img{
+    max-width: 100%;
+    display: block;
+}
+.bigImage img:hover {
+    max-width: 100%;
+    content: url("https://img.urbania.ca/media/2020/03/OutsiderHeader.jpg?fm=webp&quality=75&fit=max&width=1400&height=1400");
+    display: block;
+    
+}
+.zoom img {
+    height: 500px;
+}
+.contentBook {
+    text-align: center;
+}
+
+

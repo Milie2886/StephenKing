@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{# Récupération du titre du livre dans l'onglet#}
+{% block title %}{{ livre.titre }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-sm-center">{{ livre.titre }}</h1> {#Centrer en responsive le texte (class bootstrap)#}
+        <br>
+        <div class="contentBook justify-content-center"> {#Centrer un bloc#}
+            <img class="img-responsive rounded" src="{{ livre.image }}" alt="" width="300" height="450"/>
+            
+            <p class="text-sm-center"><br>Ecrit en {{ livre.anneeSortie }}, <br> <u>Résumé : </u><br> {{ livre.content | raw }}
+            <a href="{{ livre.liens }}" target="_blank" class="btn btn-Secondary">La suite sur wiki</a>
+            </p>
+            <a href="{{ path('book') }}" class="btn btn-info">Retour à la liste des livres</a>
+            <a href="{{ path('home') }}" class="btn btn-success">Home</a>
+        </div>
+    </div>
+{% endblock %}

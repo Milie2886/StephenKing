@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{# Récupération du titre du livre dans l'onglet#}
+{% block title %}{{ adaptation.titre }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-sm-center">{{ adaptation.titre }}</h1> 
+        <br>
+        <div class="contentBook justify-content-center">
+            <img class="img-responsive rounded" src="{{ adaptation.image }}" alt="" width="300" height="450"/>
+            
+            <p class="text-sm-center"><br>{{ adaptation.type }} sorti en {{ adaptation.anneeSortie }}, <br> <u>Général : </u><br> {{ adaptation.content | raw }}
+            <a href="{{ adaptation.liens }}" target="_blank" class="btn btn-Secondary">La suite sur wiki</a>
+            </p>
+            <a href="{{ path('adaptation') }}" class="btn btn-info">Retour à la liste des adaptations</a>
+            <a href="{{ path('home') }}" class="btn btn-success">Home</a>
+        </div>
+    </div>
+{% endblock %}

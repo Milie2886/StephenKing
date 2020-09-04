@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}LIVRES{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1>LIVRES</h1>
+    <br>
+    {# Affichage du contenu de la BDD en 3 colonnes (batch(3)  #}
+    {% for row in livres | batch(3) %}
+        <div class="row mb-5">
+            {% for livre in row %}
+                <div class="col-md-4">
+                    <livre>
+                        <div class="mw-100 overflow-hidden">
+                            <div class="zoom">
+                                <img src="{{ livre.image }}" class="img-fluid w-100 rounded"/>
+                            </div>
+                        <div class="metadata">{{ livre.titre }}, {{ livre.anneeSortie }}</div>
+                        <a href="{{ path('book_show', {'id': livre.id}) }}" class="btn btn-primary mb-3">+ de détails</a>
+                        </div>
+                    </livre>
+                </div>
+            
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
