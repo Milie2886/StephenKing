@@ -28,6 +28,8 @@ Voilà pour la configuration de la base de données!
 La suite est plus simple. 
 Dans ton terminal, tapes les lignes suivantes : 
 
+- composer update (permet d'installer les packages qui n'ont pas été mis sur github (trop lourd))
+
 - symfony console doctrine:database:create
 	Cette ligne permet de créer la base de données "stephenKing" dans MySql
 
