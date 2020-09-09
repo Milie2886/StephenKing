@@ -33,14 +33,11 @@ Dans ton terminal, tapes les lignes suivantes :
 - symfony console doctrine:database:create
 	Cette ligne permet de créer la base de données "stephenKing" dans MySql
 
-- symfony console doctrine:migrations:migrate
-  VALIDER en mettant y ou yes
-	Cette ligne va aller lire les fichiers Migrations créés et les comparer avec la base de données. 
-	Ces fichiers contiennent mes créations de tables (entity), comme tu n'as pas encore mes tables il va donc les ajouter à la BDD
+IMPORTATION DE LA BDD : 
 
-- symfony console doctrine:fixtures:load
-  VALIDER en mettant y ou yes
-	Enfin cette ligne va importer les datas que j'ai écrit dans les fichiers "fixtures" pour que tu ais exactement la même BDD que moi
+Dans PHPMyAdmin, se placer sur la base de données StephenKing puis cliquer sur l'onglet Importer
+
+Charger le fichier stephenKing.sql présent dans le répertoire principal puis cliquer sur Exécuter
 
 Et voilà, tu as la même base de données que moi ^^
 
